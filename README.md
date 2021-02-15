@@ -13,3 +13,13 @@
      [x] isAbsolute()
      [x] join()
      [x] resolve()
+
+*os.
+    [x] arch()
+    [x] cpus()
+    [x] networkInterfaces()
+    [x] freemem()
+    [x] hostname()
+    [x] homedir()
+    [x] type()
+    [x] userInfo()
