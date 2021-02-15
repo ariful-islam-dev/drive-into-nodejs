@@ -17,12 +17,11 @@
 *os.
    - [x] arch()
    - [x] cpus()
-    - [x] networkInterfaces()
-    - [x] freemem()
-    - [x] hostname()
-    - [x] homedir()
-    - [x] type()
-    - [x] userInfo()
+   - [x] networkInterfaces()
+   - [x] freemem()
+   - [x] hostname()
+   - [x] homedir()
+   - [x] type()
+   - [x] userInfo()
 
 
-//video 2.7 done
