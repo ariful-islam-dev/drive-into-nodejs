@@ -3,4 +3,5 @@
 ## NodeJS Features
 
 * global Object
-
+* module
+        - [x] exports
