@@ -4,22 +4,25 @@
 
 * global Object
 * module
-        - [x] exports
+    - [x] exports
 
 
 * path.
-     [x] basename()
-     [x] formate()
-     [x] isAbsolute()
-     [x] join()
-     [x] resolve()
+    - [x] basename()
+    - [x] formate()
+    - [x] isAbsolute()
+    - [x] join()
+    - [x] resolve()
 
 *os.
-    [x] arch()
-    [x] cpus()
-    [x] networkInterfaces()
-    [x] freemem()
-    [x] hostname()
-    [x] homedir()
-    [x] type()
-    [x] userInfo()
+   - [x] arch()
+   - [x] cpus()
+    - [x] networkInterfaces()
+    - [x] freemem()
+    - [x] hostname()
+    - [x] homedir()
+    - [x] type()
+    - [x] userInfo()
+
+
+//video 2.7 done
