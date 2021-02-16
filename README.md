@@ -28,3 +28,7 @@
 * fs.
     - [x] writeFile
     - [x] readFile
+
+* http.
+    - [x] createServer
+    - [x] listener
