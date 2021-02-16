@@ -10,6 +10,9 @@
 * > npm i chalk
 * > npm i faker
 
+### Uninstall Third Party Module
+* > npm uninstall faker
+
 ### GitHub Project Run
  * > npm install
 
