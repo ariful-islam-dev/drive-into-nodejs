@@ -1,20 +1,15 @@
 {
   "name": "drive-into-nodejs",
   "version": "1.0.0",
-  "description": "## Node Package Maneger",
-  "main": "index.js",
+  "description": "## ExpressJS Framwork",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "prod": " node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Ariful Islam",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
+    "express": "^4.17.1"
   }
 }
