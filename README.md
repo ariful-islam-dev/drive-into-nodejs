@@ -4,3 +4,7 @@
 
 #### Create Package Maneger
  - > npm init -y
+
+
+### Install Third Party Module
+* > npm i chalk
