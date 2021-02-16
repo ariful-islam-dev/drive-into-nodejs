@@ -27,4 +27,4 @@
 
 * fs.
     - [x] writeFile
-    
+    - [x] readFile
