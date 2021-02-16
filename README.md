@@ -8,3 +8,8 @@
 
 ### Install Third Party Module
 * > npm i chalk
+
+
+
+### Dependencies
+When We install any third pary package. Dependency stor that's version 
