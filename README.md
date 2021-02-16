@@ -14,7 +14,7 @@
     - [x] join()
     - [x] resolve()
 
-*os.
+* os.
    - [x] arch()
    - [x] cpus()
    - [x] networkInterfaces()
@@ -25,3 +25,6 @@
    - [x] userInfo()
 
 
+* fs.
+    - [x] writeFile
+    
