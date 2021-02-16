@@ -32,3 +32,6 @@
 * http.
     - [x] createServer
     - [x] listener
+
+Server is create and listen by http module and file read by the FileSystem module. 
+Server is running on port. and we can serve html file in the browser successfully.
