@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "prod": " node index.js"
   },
   "keywords": [],
   "author": "Ariful Islam",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "faker": "^5.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

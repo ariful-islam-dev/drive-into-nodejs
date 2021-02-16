@@ -7,3 +7,5 @@ console.log(chalk.white.inverse('Another Text'));
 
 console.log(`This is new`);
 console.log('I have install nodemon');
+
+console.log('This is another New line');

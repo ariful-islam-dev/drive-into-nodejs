@@ -8,6 +8,10 @@
 
 ### Install Third Party Module
 * > npm i chalk
+* > npm i faker
+
+### GitHub Project Run
+ * > npm install
 
 
 
