@@ -3,8 +3,12 @@ const express = require('express');
 const app = express();
 
 app.get('/about', (req, res)=>{
-    res.send(`<h1>I am about page</h1>`)
+    // res.send(`<h1>I am about page</h1>`)
+    res.json({
+        message: 'I am a response from yout route handler'
+    })
 })
+
 app.get('/help', (req, res)=>{
     res.send(`<h1>I am help page</h1>`)
 })
