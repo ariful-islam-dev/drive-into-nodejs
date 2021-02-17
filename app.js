@@ -1,8 +1,11 @@
 const express = require('express');
+const morgan = require('morgan');
 
 const app = express();
 
-app.get('/about', (req, res)=>{
+// app.use(morgan('dev'));
+
+app.get('/about',morgan('dev'), (req, res)=>{
     // res.send(`<h1>I am about page</h1>`)
     res.json({
         message: 'I am a response from yout route handler'
