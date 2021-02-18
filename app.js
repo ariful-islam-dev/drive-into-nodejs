@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
-const userRoute = require('./router')
+const userRoute = require('./userRoute');
+const postRoute = require('./postRoute');
 
 const app = express();
 
@@ -12,7 +13,8 @@ app.use(morgan('dev'));
 
 //User Router
 
-app.use('/user', userRoute)
+app.use('/user', userRoute);
+app.use('/posts', postRoute);
 
 //user router end
 
