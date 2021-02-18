@@ -15,11 +15,6 @@
 ### File Create
 - [x] app
 
-## Middlewares
+## Routes
 
-#### Third party middleware
-       npm i morgan
-#### How to use middleware
-    01.   app.use(morgan('dev'))
-    02.   app.get('/', morgan('dev'), (req, res)=>{res.send(data)})
-
+   > create router group for user 

@@ -3,39 +3,31 @@ const morgan = require('morgan');
 
 const app = express();
 
-function customMiddleware(req, res, next) {
-    if (req.url === '/help') {
-        res.send(`<h1>This is page is blog by admin</h1>`)
-    }
-    next();
-}
-function tinyLogger() {
-    return (req, res, next) => {
-        console.log(`${req.method} - ${req.url}`);
-        next()
-    }
-}
 
-const middleware = [customMiddleware, tinyLogger()];
 
-app.use(middleware)
+app.use(morgan('dev'));
 
-// app.use(morgan('dev'));
 
-app.get('/about', morgan('dev'), (req, res) => {
-    // res.send(`<h1>I am about page</h1>`)
-    res.json({
-        message: 'I am a response from yout route handler'
-    })
+
+//User Router
+const router = express.Router();
+
+router.get('/login', (req, res) => {
+    res.send('I am login Route')
 })
-
-app.get('/help', (req, res) => {
-    res.send(`<h1>I am help page</h1>`)
+router.get('/logout', (req, res) => {
+    res.send('I am logout Route');
+})
+router.get('/signup', (req, res) => {
+    res.send('I am signup route')
 })
 
 
+//user router end
+
+app.use('/user', router)
 app.get('/', (req, res) => {
-    res.send(` <h1>I am listening</h1>`)
+    res.send(` <h1>NodeJS is Awesome!!!!</h1>`)
 })
 
 app.get('*', (req, res) => {
