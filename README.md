@@ -14,7 +14,4 @@
 
 ### File Create
 - [x] app
-
-## Routes
-
-   > create router group for user 
+- [x] router

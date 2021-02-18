@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const userRoute = require('./router')
 
 const app = express();
 
@@ -10,22 +11,12 @@ app.use(morgan('dev'));
 
 
 //User Router
-const router = express.Router();
 
-router.get('/login', (req, res) => {
-    res.send('I am login Route')
-})
-router.get('/logout', (req, res) => {
-    res.send('I am logout Route');
-})
-router.get('/signup', (req, res) => {
-    res.send('I am signup route')
-})
-
+app.use('/user', userRoute)
 
 //user router end
 
-app.use('/user', router)
+
 app.get('/', (req, res) => {
     res.send(` <h1>NodeJS is Awesome!!!!</h1>`)
 })
