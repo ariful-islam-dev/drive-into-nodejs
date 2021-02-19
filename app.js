@@ -17,7 +17,10 @@ app.use('/user', userRoute);
 app.use('/posts', postRoute);
 
 //user router end
-
+app.get('/products/:prodId/reviews/:reviewId',(req, res)=>{
+    console.log(req.params);
+    res.send('I am listening'+ req.params.prodId);
+})
 
 app.get('/', (req, res) => {
     res.send(` <h1>NodeJS is Awesome!!!!</h1>`)
