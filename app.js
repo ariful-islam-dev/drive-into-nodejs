@@ -4,12 +4,14 @@ const contactRoute = require('./contactRoute');
 
 const app = express();
 
-app.use(morgan('dev'))
+app.use(morgan('dev'));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json())
 
 app.use('/contacts', contactRoute)
 
 app.get('*', (req, res)=>{
-    res.send('<h1>Please Use The Correct Routes</h1>')
+    res.send('<h1>Please Use The Correct Routes</h1>') 
 })
 
 const PORT = process.env.PORT || 4000;

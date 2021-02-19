@@ -1,4 +1,4 @@
-const { timeStamp } = require("console")
+
 
 class Contacts {
     constructor() {
@@ -38,4 +38,4 @@ class Contacts {
     }
 }
 
-exports.contacts = new Contacts();
+module.exports = new Contacts();
