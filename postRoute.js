@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 //example.com/posts GET
 router.get('/', (req, res) => {
+    console.log(req.query);
     res.send('Render All Post')
 });
 router.get('/:postId', (req, res)=>{
