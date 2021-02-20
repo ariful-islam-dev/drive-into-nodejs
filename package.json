@@ -1,14 +1,15 @@
 {
-  "name": "contacts-app",
+  "name": "drive-into-nodejs",
   "version": "1.0.0",
   "main": "app.js",
-  "repository": "https://github.com/nodeAriful/drive-into-nodejs.git",
-  "author": "nodeAriful <ariful.node82@gmail.com>",
-  "license": "MIT",
   "scripts": {
     "start": "nodemon app.js"
   },
+  "repository": "https://github.com/nodeAriful/drive-into-nodejs.git",
+  "author": "nodeAriful <ariful.node82@gmail.com>",
+  "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "morgan": "^1.10.0"
   },

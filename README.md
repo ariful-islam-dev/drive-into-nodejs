@@ -1,33 +1,14 @@
 # Drive Into NodeJS
 
-## Contacts App
+## Template Engine
 
+- [ ] EJS
 
-#### files
-- [x] app.js
-- [x] Contacts.js
+#### Create Server 
+- > package
+    01. express
+    02. mogan 
+    03. nodemon (dev)
 
-#### Contacts Modle & Function
-- [x] Contacts()
-    - > getAllContacts()
-    - > getContactsById(id)
-    - > createContact(contact)
-    - > updateContactById(id, updateContact)
-    - > deleteContactById(id)
-
-### Routers & Controllers
-01. Routers
-    - [ ] router.get('/', getAllContacts)
-    - [ ] router.post('/', createContact)
-    - [ ] router.get('/:id', getContactById)
-    - [ ] router.put('/:id', updateContact)
-    - [ ] router.delete('/:id', deleteContact)
-
-02. Contollers
-    - [ ] exports.getAllContacts
-    - [ ] exports.createContact
-    - [ ] exports.getContactById
-    - [ ] exports.updateContact
-    - [ ] exports.deleteContact
-
-
+#### EJS Template Engine Files
+- [x] index.js

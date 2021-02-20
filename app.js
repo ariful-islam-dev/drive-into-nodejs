@@ -1,28 +1,27 @@
 const express = require('express');
 const morgan = require('morgan');
-const contactRoute = require('./contactRoute');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended: true}));
-app.use(express.json())
 
-app.use('/contacts', contactRoute)
 
-app.get('*', (req, res)=>{
-    res.send('<h1>Please Use The Correct Routes</h1>') 
+app.get('/', (req, res) => {
+    res.render('index', {title: 'EJS is an Awesome Template Engine'})
 })
+app.get('*', (req, res) => {
+    res.send(`
+    <div>
+        <h1>404</h1>
+        <p>Page Not Found</p>
+    </div>
+    `)
+});
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, ()=>{
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`SERVER IS RUNNING ON PORT ${PORT}`);
 })
-
-
-
-//Routes
-//Controller
-
-//Contact
