@@ -22,3 +22,10 @@ mongodb is a noSql database and it's a document database
 * Routes 
     - [x] Routers
     - [x] Controllers
+
+#### Controllers Method
+- [ ] getAllContact, 
+- [ ] getSingleContact, 
+- [ ] createContact, 
+- [ ] updateContact, 
+- [ ] deleteContact
