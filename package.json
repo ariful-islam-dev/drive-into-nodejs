@@ -1,5 +1,5 @@
 {
-  "name": "drive-into-nodejs",
+  "name": "mongodb_database",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -9,8 +9,8 @@
   "author": "nodeAriful <ariful.node82@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "mongoose": "^5.11.17",
     "morgan": "^1.10.0"
   },
   "devDependencies": {

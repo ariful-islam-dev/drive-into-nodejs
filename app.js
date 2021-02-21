@@ -1,45 +1,50 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const app = express();
 
-app.set('view engine', 'ejs');
 
 app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+let Schema = mongoose.Schema
+let testSchema = new Schema({
+    name: String,
+
+})
+let Test = mongoose.model('Test', testSchema);
 
 
 app.get('/', (req, res) => {
-    let post = {
-        title: 'Test Title',
-        body: 'Test Body',
-        published: true
-    }
-    let posts = [
-        {title: 'Title One', author: 'Ariful Islam'},
-        {title: 'Title Two', author: 'Aysha Mone'},
-        {title: 'Title Three', author: 'Abdullah al Zarif'},
-        {title: 'Title Four', author: 'Azizul Islam'},
-        {title: 'Title Five', author: 'Asia Khatun'}
-    ]
-    res.render('pages/index', { title: 'EJS is an Awesome Template Engine' , post,  posts})
+    
+    let test = new Test({
+        name: 'Ariful Islam'
+    })
+    test.save()
+        .then(t=>{
+            res.json(t)
+        })
+        .catch(e=>{
+            console.log(e);
+            res.status(500).json({
+                error:'Error Ocurse'
+            })
+        })
 })
-app.get('/about', (req, res)=>{
-    res.render('pages/about', {title: 'This is about page'})
-})
-app.get('/help', (req, res)=>{
-    res.render('pages/help', {title: 'This is help page'})
-})
-app.get('*', (req, res) => {
-    res.send(`
-    <div>
-        <h1>404</h1>
-        <p>Page Not Found</p>
-    </div>
-    `)
-});
 
 const PORT = process.env.PORT || 8080;
+const DB_URL = `mongodb://localhost/testDB`;
 
-app.listen(PORT, () => {
-    console.log(`SERVER IS RUNNING ON PORT ${PORT}`);
-})
+mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(()=>{
+        console.log('Database is connected');
+        app.listen(PORT, () => {
+            console.log(`SERVER IS RUNNING ON PORT ${PORT}`);
+        })
+    })
+    .catch(e=>{
+        console.log(e.message);
+    })
+

@@ -1,23 +1,18 @@
 # Drive Into NodeJS
 
-## Template Engine
+## MongoDB
 
-- [ ] EJS
+mongodb is a noSql database and it's a document database
 
-#### Create Server 
-- > package
-    01. express
-    02. mogan 
-    03. nodemon (dev)
+#### Database Coonected
 
-#### EJS Template Engine Files
-- [x] index.js
-
-#### Included Files
-- [x] header.ejs
-    > nav.ejs
-- [x] every page files
-    > header.ejs
-    > footer.ejs
-
-
+        mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+        .then(()=>{
+            console.log('Database is connected');
+            app.listen(PORT, () => {
+                console.log(`SERVER IS RUNNING ON PORT ${PORT}`);
+            })
+        })
+        .catch(e=>{
+            console.log(e.message);
+        })
