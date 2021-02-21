@@ -4,7 +4,7 @@ const Contact = require('./Contact');
 exports.getAllContact = (req, res) => {
     Contact.find()
         .then(contacts => {
-            res.json(contacts)
+            res.render('index', {contacts, title: 'All Contacts Lists'}, )
         })
         .catch(e => {
             console.log(e);
