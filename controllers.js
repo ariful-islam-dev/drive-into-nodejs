@@ -1,10 +1,11 @@
 const Contact = require('./Contact');
+const mongoose = require('mongoose')
 
 
 exports.getAllContact = (req, res) => {
     Contact.find()
         .then(contacts => {
-            res.render('index', {contacts, title: 'All Contacts Lists'}, )
+            res.render('index', { contacts, error: {} },)
         })
         .catch(e => {
             console.log(e);
@@ -30,24 +31,90 @@ exports.getSingleContact = (req, res) => {
 }
 
 exports.createContact = (req, res) => {
-    let { name, phone, email } = req.body;
+    let { name, phone, email, id } = req.body;
 
-    let contact = new Contact({
-        name,
-        email,
-        phone
-    })
-    contact.save()
-        .then(c => {
-            res.json(c)
+
+
+    let error = {}
+    if (!name) {
+        error.name = 'Please Provide Your Name'
+    }
+    if (!phone) {
+        error.phone = 'Please Provide Your Phone Number'
+    }
+    if (!email) {
+        error.email = 'Please Provide Your An Email'
+    }
+
+    let isError = Object.keys(error).length > 0;
+    if (isError) {
+        Contact.find()
+            .then(contacts => {
+                return res.render('index', { contacts, error })
+            })
+            .catch(e => {
+                return res.json({
+                    message: e.message
+                })
+            })
+    };
+    if (id) {
+        
+        Contact.findOneAndReplace({_id: id},
+            {
+                $set: {
+                    name,
+                    email,
+                    phone
+                }
+            }, {
+            new: true
         })
-        .catch(e => {
-            console.log(e);
+            .then((c) => {
+                console.log(c);
+                Contact.find()
+                    .then(contacts => {
+
+                        res.render('index', { contacts, error: {} })
+                    })
+            })
+            .catch(e => {
+                console.log(e);
+                return res.json({
+                    message: e.message
+                })
+            })
+    } else {
+        let contact = new Contact({
+            name,
+            email,
+            phone
         })
 
-    // res.json({
-    //     message: 'Somthing'
-    // })
+        contact.save()
+            .then(() => {
+                Contact.find()
+                    .then(contacts => {
+                        return res.render('index', { contacts, error: {} })
+                    })
+                    .catch(e => {
+                        console.log(e);
+                        res.json({
+                            message: e.message
+                        })
+                    })
+            })
+            .catch(e => {
+                console.log(e);
+                res.json({
+                    message: e.message
+                })
+            })
+    }
+
+
+
+
 }
 
 exports.updateContact = (req, res) => {
@@ -77,11 +144,14 @@ exports.updateContact = (req, res) => {
 }
 
 exports.deleteContact = (req, res) => {
-    let {id} = req.params;
+    let { id } = req.params;
 
-    Contact.findOneAndDelete({_id: id})
-        .then(contact=>{
-            res.json(contact)
+    Contact.findOneAndDelete({ _id: id })
+        .then(() => {
+            Contact.find()
+                .then(contacts => {
+                    res.render('index', { contacts, error: {} })
+                })
         })
         .catch(e => {
             console.log(e);

@@ -19,3 +19,5 @@
 ### Frontend
 01. HTML From
 02. Show Data to Table
+
+video 10.1
