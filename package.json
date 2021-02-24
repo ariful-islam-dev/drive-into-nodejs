@@ -1,21 +1,10 @@
 {
-  "name": "mongodb_database",
+  "name": "drive-into-nodejs",
   "version": "1.0.0",
   "main": "app.js",
+  "author": "",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
-  "repository": "https://github.com/nodeAriful/drive-into-nodejs.git",
-  "author": "nodeAriful <ariful.node82@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "mongodb": "^3.6.4",
-    "mongoose": "^5.11.17",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
-  }
+  "license": "MIT"
 }

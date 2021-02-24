@@ -1,23 +1,18 @@
 # Drive Into NodeJS
 
-## Contact Application Full Stack
+## MVC = Modle View Cntroller
 
-### Backend
-#### Related Files
-* Contact Modle Using Schema
-* Routes 
-    - [x] Routers
-    - [x] Controllers
+#### Why MVC is Important
+01. Logical Oranise Project Structure
+02. Easy to Keep Track of Code
+03. View Layers are Separated From Database
+04. Easily Filter What Should Store or What Should Show
+05. Less Dependable Code
 
-#### Controllers Method
-- [ ] getAllContact, 
-- [ ] getSingleContact, 
-- [ ] createContact, 
-- [ ] updateContact, 
-- [ ] deleteContact
-
-### Frontend
-01. HTML From
-02. Show Data to Table
-
-video 10.1
+#### Key Features of Our Project
+01. User can register and login
+02. User can create new post, update and delete from dashboard
+03. User can create theri profile and able to check other profiles
+04. Logged in user can like, dislike and comment and reply to comments
+05. Logged in user can also bookmark post
+06. User can Update their profile and change password
