@@ -16,3 +16,35 @@
 04. Logged in user can like, dislike and comment and reply to comments
 05. Logged in user can also bookmark post
 06. User can Update their profile and change password
+
+
+
+### Project Directory
+- [ ] Models
+- [ ] Controllers
+- [ ] Middleware
+- [ ] Routes
+- [ ] Config
+- [ ] Utils
+- [ ] Views
+    - [x] Pages
+    - [x] Partials
+- [ ] Validator
+- [ ] Public
+    - [x] Images
+    - [x] scripts
+    - [x] styles
+    - [x] Uploads
+- [ ] API
+    - [x] Controllers
+    - [x] Routes
+
+
+
+
+### File
+- [x] app.js Main file
+- [x] package.json Atometed Generated
+- [x] README.md For Markdown  this project
+- [x] .gitingonre Don't Send the github repo using this file
+
