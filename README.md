@@ -38,7 +38,7 @@
 - [ ] API
     - [x] Controllers
     - [x] Routes
-
+- [ ] node_modules Auto Genereted
 
 
 
@@ -47,4 +47,6 @@
 - [x] package.json Atometed Generated
 - [x] README.md For Markdown  this project
 - [x] .gitingonre Don't Send the github repo using this file
+- [x] yarn.lock Auto Generated
+
 
