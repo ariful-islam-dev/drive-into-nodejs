@@ -1,10 +1,5 @@
 # Drive Into NodeJS
 
-## Modles
-- > User
-- > Profile
-- > Post
-- > Comment
 
 
 ### Project Directory
@@ -38,3 +33,21 @@
 - [x] yarn.lock Auto Generated
 
 
+## Modles
+- > User
+    01. Name
+    02. Email
+    03. Password
+    04. Profile
+
+- > Profile
+    01. User
+    02. Title
+    03. Bio
+    04. ProfilePic
+    05. Links
+    06. Post
+    07. Bookmarks
+    
+- > Post
+- > Comment
