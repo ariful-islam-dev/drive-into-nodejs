@@ -59,5 +59,12 @@
     07. Likes
     08. Dislikes
     09. Comments
-    
+
 - > Comment
+    01. Post
+    02. User
+    03. Body
+    04. Replies
+        - [x] Body
+        - [x] User
+        - [x] Time
