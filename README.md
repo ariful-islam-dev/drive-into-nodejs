@@ -68,3 +68,27 @@
         - [x] Body
         - [x] User
         - [x] Time
+
+
+## Routes
+
+#### Authentication Routes
+*   Get Signup
+*   Post Signup
+
+*   Get Login
+*   Post Login
+
+*   Get Logout
+
+
+## Controllers
+
+#### Authentication Controllers
+- > signupGetController
+- > signupPostController
+
+- > LoginGetController
+- > LoginPostController
+
+- > LogoutController
