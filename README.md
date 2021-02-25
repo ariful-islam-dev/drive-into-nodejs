@@ -48,6 +48,16 @@
     05. Links
     06. Post
     07. Bookmarks
-    
+
 - > Post
+    01. Title
+    02. Body
+    03. Authore,
+    04. Tags
+    05. Thumbnail
+    06. Read Time
+    07. Likes
+    08. Dislikes
+    09. Comments
+    
 - > Comment
