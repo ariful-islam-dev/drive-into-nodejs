@@ -96,3 +96,4 @@
 ###  Working Process Backend
 -   > mongodb database connected
 -   > password hashed
+-   > env
