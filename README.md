@@ -11,7 +11,13 @@
 - [ ] Utils
 - [ ] Views
     - [x] Pages
+        * auth
+            - > login
+            - > signup
     - [x] Partials
+        - > header
+        - > navigation
+        - > footer
 - [ ] Validator
 - [ ] Public
     - [x] Images
@@ -92,3 +98,4 @@
 - > LoginPostController
 
 - > LogoutController
+

@@ -20,6 +20,7 @@ app.use(middleware);
 
 
 app.get('/', (req,res)=>{
+    res.render('pages/auth/signup',{title: 'Create A New Account'})
     res.json({
         message: 'Hellow World'
     })
