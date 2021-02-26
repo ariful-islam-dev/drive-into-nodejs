@@ -9,7 +9,7 @@ html, body{
     background-color: rgb(245, 245, 245);
 }
 .my-container{
-    min-height: 600px;
+    /* min-height: 600px; */
 }
 
 footer{
