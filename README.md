@@ -88,6 +88,10 @@
 - [x] .gitingonre Don't Send the github repo using this file
 - [x] yarn.lock Auto Generated
 
+### Working Process Fronend
+*   Signup page
 
-### Database connected
--   > mongodb database
+
+###  Working Process Backend
+-   > mongodb database connected
+-   > password hashed
