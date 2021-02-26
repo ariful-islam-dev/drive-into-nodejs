@@ -90,6 +90,7 @@
 
 ### Working Process Fronend
 *   Signup page
+*   Login page
 
 
 ###  Working Process Backend

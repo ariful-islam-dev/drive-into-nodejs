@@ -2,11 +2,11 @@
 
     <div class="container my-container my-5">
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="card  bg-light mb-3">
-                <div class=" card-header">
+            <div class="card col-4">
+                <div class="card-header mb-3">
                     <h4>Create A New Account</h4>
                 </div>
-                <div class="card-body">
+                <div class="">
                     <form action="/auth/signup" method="POST">
                         <div class="form-group">
                             <label for="username">Enter Your Username (Must be Uniq)</label>
@@ -27,6 +27,7 @@
                         </div>
                         <input type="submit" class="btn btn-primary" value="Signup">
                     </form>
+                    <a href="/auth/login" class="my-3 text-center acc_link"> Already have an Account</a>
                 </div>
             </div>
         </div>

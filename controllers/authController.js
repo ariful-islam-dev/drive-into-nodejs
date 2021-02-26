@@ -34,7 +34,7 @@ exports.signupPostController = async (req, res, next) => {
 
 //Login Controller
 exports.loginGetController = (req, res, next) => {
-
+    res.render('pages/auth/login.ejs', {title: 'Login Your Account'})
 }
 exports.loginPostController = (req, res, next) => {
 
