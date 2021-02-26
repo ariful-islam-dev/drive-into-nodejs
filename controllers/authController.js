@@ -54,7 +54,7 @@ exports.loginPostController = async (req, res, next) => {
                 })
             }else{
                 console.log('Successfuly Logged in', user);
-                res.render('pages/auth/login.ejs', { title: 'Create Your Account' })
+                res.render('pages/auth/login.ejs', { title: 'Create Your Account' , user})
             }
         }
     } catch (e) {
