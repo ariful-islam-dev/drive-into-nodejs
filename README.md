@@ -3,7 +3,7 @@
 
 
 ### Project Directory
-- [###] Models
+- [ ] Models
     - > User
         01. Name
         02. Email

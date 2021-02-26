@@ -1,6 +1,9 @@
 const express = require('express');
 const morgan = require('morgan')
 
+//Import Routes
+const authRoutes = require('./routes/authRoute')
+
 const app = express();
 
 //Setup View Engine
@@ -18,9 +21,10 @@ const middleware = [
 
 app.use(middleware);
 
+app.use('/auth', authRoutes);
 
 app.get('/', (req,res)=>{
-    res.render('pages/auth/signup',{title: 'Create A New Account'})
+    
     res.json({
         message: 'Hellow World'
     })

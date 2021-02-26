@@ -1,27 +1,28 @@
 // name, Email, Password and Profile
 
 const { Schema, model } = require('mongoose');
-const Profile = require('./Profile');
+// const Profile = require('./Profile');
 
 const userSchema = new Schema({
     username: {
         type: String,
         trim: true,
         maxlength: 15,
-        require: true
+        required: true
     },
     email:{
-        tryp: String,
+        type: String,
         trim: true,
-        require: true
+        required: true
     },
     password: {
         type: String,
-        require: true
+        trim: true,
+        required: true
     },
     profile: {
         type: Schema.Types.ObjectId,
-        ref: Profile
+        ref: 'Profile'
     }
 }, {
     timestamps: true

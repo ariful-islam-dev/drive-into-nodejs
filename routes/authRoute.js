@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { signupGetController, signupPostController , loginGetController, loginPostController} = require('../controllers/authController')
+const { signupGetController, signupPostController , loginGetController, loginPostController, logoutController} = require('../controllers/authController')
 
 
 //SignUp Routes
