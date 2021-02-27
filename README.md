@@ -97,3 +97,7 @@
 -   > mongodb database connected
 -   > password hashed
 -   > env
+
+
+### plyground for validation
+-   > playground function
