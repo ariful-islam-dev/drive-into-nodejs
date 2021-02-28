@@ -6,7 +6,7 @@ require('dotenv').config();
 //Import Routes
 const authRoutes = require('./routes/authRoute')
 //plyground Routes
-const validatorRoutes = require('./playground/validator');
+// const validatorRoutes = require('./playground/validator');
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.use(middleware);
 
 
 app.use('/auth', authRoutes);
-app.use('/playground', validatorRoutes) //Todo shuld be remove
+// app.use('/playground', validatorRoutes) //Todo shuld be remove
 
 app.get('/', (req, res) => {
 

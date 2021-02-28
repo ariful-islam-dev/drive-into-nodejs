@@ -98,10 +98,14 @@
 -   > password hashed
 -   > env
 
+### Authentication Validation
+-   > username
+-   > email
+-   > password
+-   > confirmPassword
 
 ### plyground for validation
 -   > playground function
 -   > express-validator
 -   > create error object
 
-video 14.5 done

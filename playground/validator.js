@@ -11,11 +11,13 @@ router.post('/validator',
             .isEmpty()
             .withMessage(`Username can not be empty`)
             .isLength({ max: 15 })
-            .withMessage(`Username can not be greter than 15 Character`),
+            .withMessage(`Username can not be greter than 15 Character`)
+            .trim(),
 
         check('email')
             .isEmail()
-            .withMessage(`Please Provide A Valid Email`),
+            .withMessage(`Please Provide A Valid Email`)
+            .normalizeEmail(),
 
         check('password').custom((value) => {
             if (value.length < 5) {
@@ -26,14 +28,14 @@ router.post('/validator',
         }),
         check('confirmPassword').custom((value, { req }) => {
             if (value !== req.body.password) {
-              throw new Error('Password confirmation does not match password');
+                throw new Error('Password confirmation does not match password');
             }
-        
+
             // Indicates the success of this synchronous custom validator
             return true;
-          }),
+        }),
 
-       
+
 
 
     ],
@@ -48,6 +50,7 @@ router.post('/validator',
         console.log(errors.mapped());
 
         console.log(errors.formatWith(formatter).mapped());
+        console.log(req.body.username, req.body.email);
 
         res.render('playground/signup', { title: 'Validator Playground' })
     })
