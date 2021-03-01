@@ -42,16 +42,16 @@ exports.signupPostController = async (req, res, next) => {
 
 //Login Controller
 exports.loginGetController = (req, res, next) => {
-    // let isLoggedIn = req.get('Cookie').includes('isLoggedIn') ? true : false
-    res.render('pages/auth/login.ejs', { title: 'Login Your Account', error: {}, isLoggedIn:false })
+    console.log(req.session.isLoggedIn, req.session.user);
+    res.render('pages/auth/login.ejs', { title: 'Login Your Account', error: {}
+})
 }
 exports.loginPostController = async (req, res, next) => {
-    let isLoggedIn = req.get('Cookie').includes('isLoggedIn') ? true : false
     let { email, password } = req.body;
 
     let errors = validationResult(req).formatWith(errorFormatter)
     if (!errors.isEmpty()) {
-        return res.render('pages/auth/login.ejs', { title: 'Login to Your Account', error: errors.mapped(), isLoggedIn })
+        return res.render('pages/auth/login.ejs', { title: 'Login to Your Account', error: errors.mapped() })
     }
 
     try {
@@ -68,8 +68,9 @@ exports.loginPostController = async (req, res, next) => {
                     message: 'Invalid Credential'
                 })
             } else {
-                res.setHeader('Set-Cookie', 'isLoggedIn=true');
-                res.render('pages/auth/login.ejs', { title: 'Create Your Account', user, error: {}, isLoggedIn })
+                req.session.isLoggedIn = true,
+                req.session.user = user,
+                res.render('pages/auth/login.ejs', { title: 'Create Your Account', user, error: {}})
             }
         }
     } catch (e) {
