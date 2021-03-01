@@ -104,8 +104,13 @@
 -   > password
 -   > confirmPassword
 
+### Show Error Message
+-   > Signup page
+-   > Login page
+
 ### plyground for validation
 -   > playground function
 -   > express-validator
 -   > create error object
+
 

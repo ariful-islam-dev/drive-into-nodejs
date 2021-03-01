@@ -1,12 +1,20 @@
 const User = require("../models/User");
 const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator')
+const errorFormatter = require('../utils/validationErrorFormatter')
 
 // Sign Up Controller
 exports.signupGetController = (req, res, next) => {
-    res.render('pages/auth/signup.ejs', { title: 'Create Your Account' })
+    res.render('pages/auth/signup.ejs', { title: 'Create Your Account', error: {} })
 }
 
 exports.signupPostController = async (req, res, next) => {
+    let errors = validationResult(req).formatWith(errorFormatter)
+    if(!errors.isEmpty()){
+       return res.render('pages/auth/signup.ejs', { title: 'Create Your Account', error: errors.mapped() })
+    }
+
+
     const { email, username, password } = req.body;
 
 
@@ -34,10 +42,15 @@ exports.signupPostController = async (req, res, next) => {
 
 //Login Controller
 exports.loginGetController = (req, res, next) => {
-    res.render('pages/auth/login.ejs', { title: 'Login Your Account' })
+    res.render('pages/auth/login.ejs', { title: 'Login Your Account' , error: {}})
 }
 exports.loginPostController = async (req, res, next) => {
     let { email, password } = req.body;
+
+    let errors = validationResult(req).formatWith(errorFormatter)
+    if(!errors.isEmpty()){
+       return res.render('pages/auth/login.ejs', { title: 'Login to Your Account', error: errors.mapped() })
+    }
 
     try {
         let user = await User.findOne({ email })
