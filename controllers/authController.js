@@ -10,8 +10,8 @@ exports.signupGetController = (req, res, next) => {
 
 exports.signupPostController = async (req, res, next) => {
     let errors = validationResult(req).formatWith(errorFormatter)
-    if(!errors.isEmpty()){
-       return res.render('pages/auth/signup.ejs', { title: 'Create Your Account', error: errors.mapped() })
+    if (!errors.isEmpty()) {
+        return res.render('pages/auth/signup.ejs', { title: 'Create Your Account', error: errors.mapped() })
     }
 
 
@@ -42,32 +42,34 @@ exports.signupPostController = async (req, res, next) => {
 
 //Login Controller
 exports.loginGetController = (req, res, next) => {
-    res.render('pages/auth/login.ejs', { title: 'Login Your Account' , error: {}})
+    // let isLoggedIn = req.get('Cookie').includes('isLoggedIn') ? true : false
+    res.render('pages/auth/login.ejs', { title: 'Login Your Account', error: {}, isLoggedIn:false })
 }
 exports.loginPostController = async (req, res, next) => {
+    let isLoggedIn = req.get('Cookie').includes('isLoggedIn') ? true : false
     let { email, password } = req.body;
 
     let errors = validationResult(req).formatWith(errorFormatter)
-    if(!errors.isEmpty()){
-       return res.render('pages/auth/login.ejs', { title: 'Login to Your Account', error: errors.mapped() })
+    if (!errors.isEmpty()) {
+        return res.render('pages/auth/login.ejs', { title: 'Login to Your Account', error: errors.mapped(), isLoggedIn })
     }
 
     try {
         let user = await User.findOne({ email })
 
-        if(!user){
+        if (!user) {
             res.json({
                 message: 'Invalid Credential'
             })
-        }else{
+        } else {
             let match = await bcrypt.compare(password, user.password);
-            if(!match){
+            if (!match) {
                 res.json({
                     message: 'Invalid Credential'
                 })
-            }else{
-                console.log('Successfuly Logged in', user);
-                res.render('pages/auth/login.ejs', { title: 'Create Your Account' , user})
+            } else {
+                res.setHeader('Set-Cookie', 'isLoggedIn=true');
+                res.render('pages/auth/login.ejs', { title: 'Create Your Account', user, error: {}, isLoggedIn })
             }
         }
     } catch (e) {

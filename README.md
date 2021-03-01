@@ -107,10 +107,12 @@
 ### Show Error Message
 -   > Signup page
 -   > Login page
-
+-   > Set Cookie in brawser
 ### plyground for validation
 -   > playground function
 -   > express-validator
 -   > create error object
+
+
 
 
