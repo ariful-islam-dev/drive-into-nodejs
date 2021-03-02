@@ -16,7 +16,8 @@ const app = express();
 const mongoDB_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.nine7.mongodb.net/exp-blog?retryWrites=true&w=majority`
 var store = new MongoDBStore({
     uri: mongoDB_URI,
-    collection: 'session'
+    collection: 'session',
+    expires:1000 * 60 * 60 * 2
 });
 
 
@@ -35,8 +36,7 @@ const middleware = [
         secret: process.env.SECRET_KEY || "SECRET_KEY",
         resave: false,
         saveUninitialized: false,
-        store: store,
-        expires: 1000 * 60 * 60 * 2
+        store: store
 
     })
 ];
