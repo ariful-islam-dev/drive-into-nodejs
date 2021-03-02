@@ -107,7 +107,7 @@
 ### Show Error Message
 -   > Signup page
 -   > Login page
--   > Set Cookie in brawser
+-   > Set Session Cookie in brawser
 ### plyground for validation
 -   > playground function
 -   > express-validator

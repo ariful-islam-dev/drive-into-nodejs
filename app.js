@@ -2,7 +2,9 @@ const express = require('express');
 const morgan = require('morgan')
 const mongoose = require('mongoose');
 require('dotenv').config();
-const session = require('express-session')
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+
 
 //Import Routes
 const authRoutes = require('./routes/authRoute')
@@ -10,6 +12,13 @@ const authRoutes = require('./routes/authRoute')
 // const validatorRoutes = require('./playground/validator');
 
 const app = express();
+
+const mongoDB_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.nine7.mongodb.net/exp-blog?retryWrites=true&w=majority`
+var store = new MongoDBStore({
+    uri: mongoDB_URI,
+    collection: 'session'
+});
+
 
 //Setup View Engine
 
@@ -25,7 +34,10 @@ const middleware = [
     session({
         secret: process.env.SECRET_KEY || "SECRET_KEY",
         resave: false,
-        saveUninitialized: false
+        saveUninitialized: false,
+        store: store,
+        expires: 1000 * 60 * 60 * 2
+
     })
 ];
 
@@ -42,7 +54,7 @@ app.get('/', (req, res) => {
     })
 })
 // const PORT = process.env.PORT || 8080;
-const mongoDB_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.nine7.mongodb.net/exp-blog?retryWrites=true&w=majority`
+
 
 mongoose.connect(mongoDB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
