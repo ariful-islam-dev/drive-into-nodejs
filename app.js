@@ -8,6 +8,9 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 
 //Import Routes
 const authRoutes = require('./routes/authRoute')
+
+//Import Middleware
+const { bindeUserWithRequest } = require('./middleware/authMiddleware')
 //plyground Routes
 // const validatorRoutes = require('./playground/validator');
 
@@ -38,7 +41,8 @@ const middleware = [
         saveUninitialized: false,
         store: store
 
-    })
+    }),
+    bindeUserWithRequest()
 ];
 
 app.use(middleware);

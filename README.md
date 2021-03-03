@@ -108,6 +108,7 @@
 -   > Signup page
 -   > Login page
 -   > Set Session Cookie in brawser
+-   > Set Session on Database
 ### plyground for validation
 -   > playground function
 -   > express-validator
