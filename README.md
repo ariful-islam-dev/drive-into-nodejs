@@ -47,7 +47,10 @@
     - > LoginPostController
 
     - > LogoutController
+    ##### Dashboard Controller
 - [ ] Middleware
+    - >  authMiddleware
+    - >  setLocals
 - [ ] Routes
     ##### Authentication Routes
     *   Get Signup
@@ -58,25 +61,33 @@
 
     *   Get Logout
 - [ ] Config
+- [ ] Api
+    - [x] Controlers
+    - [x] Routes
 - [ ] Utils
+    *   validationErrorFormatter
 - [ ] Views
     - [x] Pages
         * auth
-            - > login
-            - > signup
+            - > login.ejs
+            - > signup.ejs
     - [x] Partials
-        - > header
-        - > navigation
-        - > footer
+        - > header.ejs
+        - > navigation.ejs
+        - > footer.ejs
+    - [x] Dashboard
+        - > dashboard.ejs
 - [ ] Validator
+    - [x] Auth
+        - >loginValidator.js
+        - > signupValidator.js
 - [ ] Public
     - [x] Images
     - [x] scripts
     - [x] styles
+        - > style.css
     - [x] Uploads
-- [ ] API
-    - [x] Controllers
-    - [x] Routes
+
 - [ ] node_modules Auto Genereted
 
 
@@ -109,11 +120,9 @@
 -   > Login page
 -   > Set Session Cookie in brawser
 -   > Set Session on Database
+
 ### plyground for validation
 -   > playground function
 -   > express-validator
 -   > create error object
 
-
-
-video 15.10 done
