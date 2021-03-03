@@ -11,6 +11,7 @@ const authRoutes = require('./routes/authRoute')
 
 //Import Middleware
 const { bindeUserWithRequest } = require('./middleware/authMiddleware')
+const setlocals = require('./middleware/setLocals')
 //plyground Routes
 // const validatorRoutes = require('./playground/validator');
 
@@ -20,7 +21,7 @@ const mongoDB_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}
 var store = new MongoDBStore({
     uri: mongoDB_URI,
     collection: 'session',
-    expires:1000 * 60 * 60 * 2
+    expires: 1000 * 60 * 60 * 2
 });
 
 
@@ -42,7 +43,8 @@ const middleware = [
         store: store
 
     }),
-    bindeUserWithRequest()
+    bindeUserWithRequest(),
+    setlocals()
 ];
 
 app.use(middleware);
