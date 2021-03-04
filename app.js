@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
+const flash = require('connect-flash');
 
 
 //Import Routes
@@ -14,7 +15,7 @@ const dashboardRoutes = require('./routes/dashboardRoute')
 const { bindeUserWithRequest } = require('./middleware/authMiddleware')
 const setLocals = require('./middleware/setLocals')
 //plyground Routes
-// const validatorRoutes = require('./playground/validator');
+const validatorRoutes = require('./playground/validator');
 
 const app = express();
 
@@ -45,7 +46,8 @@ const middleware = [
 
     }),
     bindeUserWithRequest(),
-    setLocals()
+    setLocals(),
+    flash()
 ];
 
 app.use(middleware);
@@ -53,7 +55,7 @@ app.use(middleware);
 
 app.use('/auth', authRoutes);
 app.use('/dashboard', dashboardRoutes);
-// app.use('/playground', validatorRoutes) //Todo shuld be remove
+app.use('/playground', validatorRoutes) //Todo shuld be remove
 
 app.get('/', (req, res) => {
 
