@@ -61,6 +61,10 @@
 
     *   Get Logout
 - [ ] Config
+    - [x] config.js
+    - [x] default.json
+    - [x] development.json
+    - [x] production.json
 - [ ] Api
     - [x] Controlers
     - [x] Routes
@@ -128,3 +132,7 @@
 -   > express-validator
 -   > create error object
 
+### Environment
+-   > Set Development 
+    - [x] export NODE_ENV=DEVELOPMENT
+    - [x] export NODE_ENV=production
