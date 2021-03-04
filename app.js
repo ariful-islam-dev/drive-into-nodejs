@@ -21,8 +21,8 @@ const setLocals = require('./middleware/setLocals');
 
 const app = express();
 
-const DB_ADMIN = process.env.DB_USER
-const DB_PASSWORD = process.env.DB_PASS
+const DB_ADMIN = config.get('db-username')
+const DB_PASSWORD = config.get('db-password')
 
 const mongoDB_URI = `mongodb+srv://${DB_ADMIN}:${DB_PASSWORD}@cluster0.nine7.mongodb.net/exp-blog?retryWrites=true&w=majority`
 var store = new MongoDBStore({
@@ -60,7 +60,7 @@ const middleware = [
     express.urlencoded({ extended: true }),
     express.json(),
     session({
-        secret: process.env.SECRET_KEY || "SECRET_KEY",
+        secret: config.get('secret'),
         resave: false,
         saveUninitialized: false,
         store: store
