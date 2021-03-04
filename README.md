@@ -120,6 +120,7 @@
 -   > Login page
 -   > Set Session Cookie in brawser
 -   > Set Session on Database
+-   > Create Flash Message Every Controller
 
 ### plyground for validation
 -   > playground function

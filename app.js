@@ -55,7 +55,7 @@ app.use(middleware);
 
 app.use('/auth', authRoutes);
 app.use('/dashboard', dashboardRoutes);
-app.use('/playground', validatorRoutes) //Todo shuld be remove
+// app.use('/playground', validatorRoutes) //Todo shuld be remove
 
 app.get('/', (req, res) => {
 
