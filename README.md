@@ -121,6 +121,7 @@
 -   > Set Session Cookie in brawser
 -   > Set Session on Database
 -   > Create Flash Message Every Controller
+-   > Show Alert Message Every page for errors
 
 ### plyground for validation
 -   > playground function
