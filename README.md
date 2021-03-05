@@ -51,15 +51,19 @@
 - [ ] Middleware
     - >  authMiddleware
     - >  setLocals
+    - > middlewares
 - [ ] Routes
-    ##### Authentication Routes
-    *   Get Signup
-    *   Post Signup
+  - > ##### Authentication Routes
+        *   Get Signup
+        *   Post Signup
 
-    *   Get Login
-    *   Post Login
+        *   Get Login
+        *   Post Login
 
-    *   Get Logout
+        *   Get Logout
+  - > ##### Dashboard Routes
+  - >  ##### Routes
+
 - [ ] Config
     - [x] config.js
     - [x] default.json
@@ -143,3 +147,7 @@
 -   > Syntax Error
 -   > Runtime Error
 -   > Logical Error
+
+### app.js inspect mode
+-   > node inspect app.js
+-   > Open Browser write urlbar chrome://inspect
