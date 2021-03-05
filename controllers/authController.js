@@ -6,6 +6,7 @@ const Flash = require('../utils/Flash');
 
 // Sign Up Controller
 exports.signupGetController = (req, res, next) => {
+
     res.render('pages/auth/signup.ejs',
         {
             title: 'Create Your Account',
@@ -19,7 +20,7 @@ exports.signupPostController = async (req, res, next) => {
 
     const { email, username, password } = req.body;
     let errors = validationResult(req).formatWith(errorFormatter)
-   
+
 
     if (!errors.isEmpty()) {
         req.flash('fail', 'Plese Check Your Form')
@@ -51,7 +52,6 @@ exports.signupPostController = async (req, res, next) => {
         res.redirect('/auth/login')
     } catch (e) {
 
-        console.log(e);
         next(e)
     }
 
@@ -70,7 +70,7 @@ exports.loginPostController = async (req, res, next) => {
     let { email, password } = req.body;
 
     let errors = validationResult(req).formatWith(errorFormatter)
-    
+
     if (!errors.isEmpty()) {
         req.flash('fail', 'Plese Check Your Form')
         return res.render('pages/auth/login.ejs',
@@ -116,7 +116,6 @@ exports.loginPostController = async (req, res, next) => {
 
         }
     } catch (e) {
-        console.log(e);
         next(e)
     }
 
@@ -127,11 +126,10 @@ exports.loginPostController = async (req, res, next) => {
 exports.logoutController = (req, res, next) => {
     req.session.destroy(err => {
         if (err) {
-            console.log(err);
             return next(err)
         };
         // req.flash('success', 'Successfully Log out');
         return res.redirect('/auth/login');
-        
+
     })
 }

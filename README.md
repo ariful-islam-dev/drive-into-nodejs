@@ -148,6 +148,10 @@
 -   > Runtime Error
 -   > Logical Error
 
+### Error Page Handle
+- [x] 404 page not found
+- [x] 500 server Error
+
 ### app.js inspect mode
 -   > node inspect app.js
 -   > Open Browser write urlbar chrome://inspect
