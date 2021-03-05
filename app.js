@@ -97,3 +97,6 @@ mongoose.connect(mongoDB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
         return console.log(e);
     })
 
+// Syntax Error, 
+//Runtime Error.
+// Logical Error

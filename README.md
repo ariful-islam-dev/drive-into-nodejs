@@ -137,3 +137,9 @@
 -   > Set Development 
     - [x] export NODE_ENV=DEVELOPMENT
     - [x] export NODE_ENV=production
+
+
+### Error
+-   > Syntax Error
+-   > Runtime Error
+-   > Logical Error
