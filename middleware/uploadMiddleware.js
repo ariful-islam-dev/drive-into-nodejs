@@ -19,9 +19,9 @@ const upload = multer({
     fileFilter: (req, file, cb) => {
         const types = /jpeg|jpg|png|git/
         const extName = types.test(path.extname(file.originalname).toLocaleLowerCase())
-        const mineType = types.test(file.minetype)
+        const mineType = types.test(file.mimetype)
 
-        if (extNam && mineType) {
+        if (extName && mineType) {
             cb(null, true)
         } else {
             cb(new Error('Only Support Images'))
