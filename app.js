@@ -5,7 +5,7 @@ require('dotenv').config();
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const flash = require('connect-flash');
-const config= require('config')
+const config = require('config')
 
 
 //Import Routes
@@ -18,6 +18,20 @@ const setLocals = require('./middleware/setLocals');
 // const config = require('./config/config');
 //plyground Routes
 // const validatorRoutes = require('./playground/validator');
+function add(a, b) {
+    if (typeof a === 'number' && typeof b === 'number') {
+        if (ad && b) {
+            return a + b
+        }
+    }
+    throw new Error('Invalid Data Type')
+}
+
+try {
+    add(12)
+} catch (e) {
+    console.log(e.message);
+}
 
 const app = express();
 
@@ -50,7 +64,7 @@ if (app.get('env').toLowerCase() === 'development') {
 
 //Setup View Engine
 
-app.set('view engine', 'ejs');  
+app.set('view engine', 'ejs');
 app.set('views', 'views')
 
 // Middleware Arrary
