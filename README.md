@@ -52,6 +52,7 @@
     - >  authMiddleware
     - >  setLocals
     - > middlewares
+    - > uploadMiddleware
 - [ ] Routes
   - > ##### Authentication Routes
         *   Get Signup
@@ -131,6 +132,9 @@
 -   > Set Session on Database
 -   > Create Flash Message Every Controller
 -   > Show Alert Message Every page for errors
+
+### Upload File
+-   > create Storage using multer (npm pakage)
 
 ### plyground for validation
 -   > playground function
