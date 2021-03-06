@@ -6,7 +6,7 @@ const { Schema, model } = require('mongoose');
 
 const profileSchema = new Schema({
     user: {
-        tipe: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },

@@ -87,6 +87,7 @@
         - > footer.ejs
     - [x] Dashboard
         - > dashboard.ejs
+        - > create-profile.ejs
 - [ ] Validator
     - [x] Auth
         - >loginValidator.js
@@ -159,3 +160,5 @@
 ### app.js inspect mode
 -   > node inspect app.js
 -   > Open Browser write urlbar chrome://inspect
+
+
