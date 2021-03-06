@@ -30,3 +30,14 @@ exports.isUnAuthenticated = (req, res, next)=>{
     }
     next();
 }
+
+exports.isAdmin = async(req, res, next)=>{
+    let user = await User.findById(req.session.user._id)
+    req.user = user
+    let email = user.email
+    if(email === 'ariful4082@gmail.com' || 'zakirbreb@gmail.com' ){
+        next()
+    }else{
+        res.redirect('/')
+    }
+}

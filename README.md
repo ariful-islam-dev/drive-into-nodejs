@@ -128,7 +128,9 @@
 -   > email
 -   > password
 -   > confirmPassword
-
+### Profile Info
+-   > Create Profile
+-   > Update Profile
 ### Show Error Message
 -   > Signup page
 -   > Login page
@@ -166,4 +168,3 @@
 -   > Open Browser write urlbar chrome://inspect
 
 
-video 19.4 10.42min done
