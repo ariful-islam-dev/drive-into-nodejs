@@ -3,7 +3,6 @@ window.onload = function () {
         viewport: {
             width: 200,
             height: 200,
-            type: 'circle'
         },
         boundary: {
             width: 300,
@@ -41,7 +40,44 @@ window.onload = function () {
             baseCropping.croppie('destroy')
         }, 1000)
     })
-    
+    $('#upload-image').on('click', function () {
+        baseCropping.croppie('result', 'blob')
+            .then(blob => {
+                let formData = new FormData()
+                let file = document.getElementById('profilePicsFile').files[0]
+                let name = generateFileName(file.name)
+                formData.append('profilePics', blob, name)
+
+                let headers = new Headers()
+
+                headers.append('Accept', 'Application/JSON')
+                // headers.append('Content-Type', 'Application/JSON')
+
+                let req = new Request('/uploads/profilePics', {
+                    method: 'POST',
+                    headers,
+                    mode:'cors',
+                    body: formData
+                })
+                return fetch(req)
+
+            })
+            .then(res => res.json())
+            .then(data=>{
+                document.getElementById('removeProfilePics').style.display='block'
+                document.getElementById('profilePics').src=data.profilePics
+                document.getElementById('profilePicsForm').reset()
+
+                $('#crop-modal').modal('hide')
+                setTimeout(()=>{
+                    baseCropping.croppie('destroy')
+                }, 1000)
+            })
+    })
 
 
+}
+function generateFileName(name) {
+    const types = /(.jpeg|.jpg|.png|.gif)/
+    return name.replace(types, '.png')
 }
