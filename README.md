@@ -48,6 +48,7 @@
 
     - > LogoutController
     ##### Dashboard Controller
+    ##### Upload Controller
 - [ ] Middleware
     - >  authMiddleware
     - >  setLocals
@@ -95,9 +96,11 @@
 - [ ] Public
     - [x] Images
     - [x] scripts
+        - > profilePicsUpload.js
     - [x] styles
         - > style.css
     - [x] Uploads
+        - > Uploads All Images
 
 - [ ] node_modules Auto Genereted
 
@@ -136,6 +139,7 @@
 
 ### Upload File
 -   > create Storage using multer (npm pakage)
+-   > Upload and Remove Profile Picture
 
 ### plyground for validation
 -   > playground function
