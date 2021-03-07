@@ -88,7 +88,7 @@ exports.removeProfilePics = (req, res, next) => {
 exports.postImageUploadController = (req, res, next) => {
     if (req.file) {
         return res.status(200).json({
-            imgUrl: `/uploads/${req.file.filename}`
+            imgUrl:`/uploads/${req.file.filename}`
         })
     }
     return res.status(500).json({
