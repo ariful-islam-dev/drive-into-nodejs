@@ -89,6 +89,8 @@
     - [x] Dashboard
         - > dashboard.ejs
         - > create-profile.ejs
+    - [x] post
+        - > createPost.ejs
 - [ ] Validator
     - [x] Auth
         - >loginValidator.js
@@ -97,6 +99,7 @@
     - [x] Images
     - [x] scripts
         - > profilePicsUpload.js
+        - > tinymce.js
     - [x] styles
         - > style.css
     - [x] Uploads
