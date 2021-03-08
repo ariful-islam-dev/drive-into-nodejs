@@ -86,11 +86,15 @@
         - > header.ejs
         - > navigation.ejs
         - > footer.ejs
+        - > sidebar
     - [x] Dashboard
         - > dashboard.ejs
         - > create-profile.ejs
+        - > edit-profile.ejs
     - [x] post
         - > createPost.ejs
+        - > posts.ejs
+        - > editPost.ejs
 - [ ] Validator
     - [x] Auth
         - >loginValidator.js
