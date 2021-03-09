@@ -18,7 +18,7 @@ function generateFilterObject(filter) {
                     $gt: genDate(7)
                 }
             }
-            order = -1
+            order = 1
             break
         }
 
@@ -28,12 +28,12 @@ function generateFilterObject(filter) {
                     $gt: genDate(30)
                 }
             }
-            order = -1
+            order = 1
             break
         }
 
         case 'all': {
-            order = -1
+            order = 1
             break
         }
     }
@@ -47,6 +47,9 @@ function generateFilterObject(filter) {
 exports.explorerGetController = async (req, res, next) => {
 
     let filter = req.query.filter || 'latest';
+    let currentPage = parseInt(req.query.page) || 1
+
+    let itemPerPage = 10
 
     let { filterObj, order } = generateFilterObject(filter.toLowerCase())
 
@@ -55,12 +58,20 @@ exports.explorerGetController = async (req, res, next) => {
         let posts = await Post.find(filterObj)
             .populate('author', 'username')
             .sort(order === 1 ? '-createdAt' : 'createdAt')
+            .skip((itemPerPage * currentPage) - itemPerPage)
+            .limit(itemPerPage)
+
+        let totalPost = await Post.countDocuments()
+        let totalPage = totalPost / itemPerPage
 
         res.render('pages/explorer/explorer.ejs', {
             title: 'Explore All Posts',
             filter,
             flashMessage: Flash.getMessage(req),
-            posts
+            posts,
+            itemPerPage,
+            currentPage,
+            totalPage
         })
     } catch (e) {
         next(e)
