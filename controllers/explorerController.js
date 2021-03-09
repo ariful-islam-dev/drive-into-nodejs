@@ -1,20 +1,70 @@
+const moment = require('moment')
 const Flash = require("../utils/Flash")
 const Post = require('../models/Post')
 
-exports.explorerGetController = async(req, res, next) => {
+function genDate(days) {
+    let date = moment().subtract(days, 'days')
+    return date.toDate()
+}
 
-    try{
-        let posts = await Post.find()
+function generateFilterObject(filter) {
+    let filterObj = {}
+    let order = 1
 
-        res.render('pages/explorer/explorer.ejs' ,{
+    switch (filter) {
+        case 'week': {
+            filterObj = {
+                createdAt: {
+                    $gt: genDate(7)
+                }
+            }
+            order = -1
+            break
+        }
+
+        case 'month': {
+            filterObj = {
+                createdAt: {
+                    $gt: genDate(30)
+                }
+            }
+            order = -1
+            break
+        }
+
+        case 'all': {
+            order = -1
+            break
+        }
+    }
+
+    return {
+        filterObj,
+        order
+    }
+}
+
+exports.explorerGetController = async (req, res, next) => {
+
+    let filter = req.query.filter || 'latest';
+
+    let { filterObj, order } = generateFilterObject(filter.toLowerCase())
+
+
+    try {
+        let posts = await Post.find(filterObj)
+            .populate('author', 'username')
+            .sort(order === 1 ? '-createdAt' : 'createdAt')
+
+        res.render('pages/explorer/explorer.ejs', {
             title: 'Explore All Posts',
-            filter: 'month',
+            filter,
             flashMessage: Flash.getMessage(req),
             posts
         })
-    }catch(e){
+    } catch (e) {
         next(e)
     }
 
-    
+
 }
