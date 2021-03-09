@@ -4,6 +4,7 @@ const playgroundRoutes = require('../playground/play')
 const uploadRoutes = require('./uploadRoutes')
 const postsRoutes = require('./postRoute')
 const apiRoutes = require('../api/routes/apiRoutes')
+const explorerRoutes = require('./explorerRoute')
 
 const routes = [
     {
@@ -32,11 +33,7 @@ const routes = [
     },
     {
         path: '/',
-        handler: (req, res) => {
-            res.json({
-                message: 'Hello World'
-            })
-        }
+        handler: explorerRoutes
     }
 ]
 
