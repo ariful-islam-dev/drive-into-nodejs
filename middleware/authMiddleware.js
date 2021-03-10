@@ -1,6 +1,6 @@
 const User = require('../models/User')
 
-exports.bindeUserWithRequest =  () => {
+exports.bindeUserWithRequest = () => {
     return async (req, res, next) => {
         if (!req.session.isLoggedIn) {
             return next()
@@ -17,27 +17,38 @@ exports.bindeUserWithRequest =  () => {
     }
 }
 
-exports.isAuthenticated = (req, res, next)=>{
-    if(!req.session.isLoggedIn){
+exports.isAuthenticated = (req, res, next) => {
+
+    if (!req.session.isLoggedIn) {
         return res.redirect('/auth/login')
     }
     next();
 }
 
-exports.isUnAuthenticated = (req, res, next)=>{
-    if(req.session.isLoggedIn){
+exports.isUnAuthenticated = (req, res, next) => {
+    if (req.session.isLoggedIn) {
         return res.redirect('/dashboard')
     }
     next();
 }
 
-exports.isAdmin = async(req, res, next)=>{
-    let user = await User.findById(req.session.user._id)
-    req.user = user
-    let email = user.email
-    if(email === 'ariful4082@gmail.com' || 'zakirbreb@gmail.com' ){
-        next()
-    }else{
-        res.redirect('/')
-    }
+exports.isAdmin =  (req, res, next) => {
+    
+        const  email  = req.user.email
+        const admin = 'test@test.com'
+        const devloper = 'ariful4082@gmail.com'
+        console.log(email, admin);
+        if(email === devloper){
+            next()
+
+        } else if (email === admin ) {
+            next()
+
+        } else {
+            req.flash('fail', 'Only admin can create post')
+            res.redirect('/')
+        }
+
+        
+    
 }
