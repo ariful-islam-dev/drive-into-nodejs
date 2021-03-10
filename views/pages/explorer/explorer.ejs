@@ -12,7 +12,7 @@
                         class="btn <%= filter === 'month' ? 'btn-primary' : 'btn-secondary' %> ">Month</a>
                     <a href="?filter=all" class="btn <%= filter === 'all' ? 'btn-primary' : 'btn-secondary' %> ">All</a>
                 </section>
-                <section>
+                <section class="">
                     <% if(posts.length===0){%>
                         <p class="text-center text-muted">There is Nothing to Show</p>
                         <%}else{%>
@@ -22,7 +22,7 @@
                                         <img class="img-fluid mb-2" src="<%= post.thumbnail %>"
                                             alt="<%= post.title %> ">
                                         <%} %>
-                                            <a href="/<%= post._id %> " style="color:#222;text-decoration: none;">
+                                            <a href="/posts/<%= post._id %> " style="color:#222;text-decoration: none;">
                                                 <h5>
                                                     <%= post.title %>
                                                 </h5>
