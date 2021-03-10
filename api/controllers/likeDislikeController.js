@@ -15,6 +15,7 @@ exports.likesGetController = async (req, res, next) => {
 
     try {
         let post = await Post.findById(postId)
+
         if (post.dislikes.includes(userId)) {
             await Post.findOneAndUpdate(
                 { _id: postId },

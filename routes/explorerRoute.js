@@ -1,4 +1,4 @@
-const { explorerGetController, singlePostGetController } = require('../controllers/explorerController')
+const { explorerGetController } = require('../controllers/explorerController')
 
 const router = require('express').Router()
 
