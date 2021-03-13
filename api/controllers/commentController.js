@@ -59,7 +59,7 @@ exports.replyCommentPostController = async (req, res, next) => {
     }
 
     try {
-        await Comment.findOneAndDelete(
+        await Comment.findOneAndUpdate(
             { _id: commentId },
             { $push: { 'replies': reply } }
         )
