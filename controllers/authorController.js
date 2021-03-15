@@ -18,6 +18,7 @@ exports.authorProfileGetController = async (req, res, next) => {
             flashMessage: Flash.getMessage(req),
             author
         })
+        console.log(author.profile.posts.length);
     } catch (e) {
         next(e)
     }
