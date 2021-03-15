@@ -1,0 +1,54 @@
+<%- include('../../partials/header.ejs') %>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="d-flex">
+                    <div>
+                        <img src="<%= author.profilePics %> " class="img-thumbnail img-fluid" alt="">
+                    </div>
+                    <div>
+                        Name: <Strong><%= author.profile.name %> </Strong>
+                        Title: <Strong><%= author.profile.title %> </Strong>
+                        Bio: <p><%= author.profile.bio %> </p>
+                    </div>
+                    <div>
+                        <% if(author.profile.links.website){%>
+                            <span>
+                                <a href="<%= author.profile.links.website %>" target="_blank">
+                                    <i class="fa fa-internet-explorer" aria-hidden="true"></i>
+                                </a> 
+                            </span>
+                            <%} %> 
+                        <% if(author.profile.links.facebook){%>
+                            <span>
+                                <a href="<%= author.profile.links.facebook %>" target="_blank">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a> 
+                            </span>
+                            <%} %> 
+                        <% if(author.profile.links.twitter){%>
+                            <span>
+                                <a href="<%= author.profile.links.twitter %>" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a> 
+                            </span>
+                            <%} %> 
+                        <% if(author.profile.links.github){%>
+                            <span>
+                                <a href="<%= author.profile.links.github %>" target="_blank">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a> 
+                            </span>
+                            <%} %> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../../partials/footer.ejs') %>
+        <script src="/scripts/bookmarks.js"></script>
+
+        </body>
+
+        </html>
