@@ -2,7 +2,7 @@
 
     <div class="container my-5">
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-10 offset-md-2">
                 <div class="card card-body">
                     <div>
                         <img src="<%= author.profilePics %> " class="img-thumbnail img-fluid" alt="">
@@ -43,7 +43,21 @@
                                 <%} %> 
                         </div>
                     </div>
-                    
+                    <% if(author.profile.posts){%>
+                            <h5>See This Author Posts</h5>
+                            <div class="row">
+                                <% for(let post of author.profile.posts){%>
+                                    <div class="col-md-6">
+                                        <div class="card card-body m-3">
+                                            <img  class="img-fluid " src="<%= post.thumbnail %> " alt="">
+                                            <a href="/posts/<%= post._id %>" style="text-decoration: none; color: #696969">
+                                                <h6><%= post.title %> </h6>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <%} %> 
+                            </div>
+                        <%} %> 
                     
                 </div>
             </div>

@@ -19,7 +19,7 @@ function generateFilterObject(filter) {
                     $gt: genDate(7)
                 }
             }
-            order = 1
+            order = -1
             break
         }
 
@@ -29,12 +29,12 @@ function generateFilterObject(filter) {
                     $gt: genDate(30)
                 }
             }
-            order = 1
+            order = -1
             break
         }
 
         case 'all': {
-            order = 1
+            order = -1
             break
         }
     }
