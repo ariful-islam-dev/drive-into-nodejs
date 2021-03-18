@@ -11,6 +11,9 @@ html, body{
 .my-container{
     min-height: 70vh;
 }
+.logo img {
+    width: 150px;
+}
 
 footer{
     text-align: center;
